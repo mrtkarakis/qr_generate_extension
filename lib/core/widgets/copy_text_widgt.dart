@@ -11,7 +11,12 @@ class CopyTextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GradientElevatedButton(
-      onPressed: () async => qrData = await textService.getCopyText() ?? "",
+      onPressed: () async {
+        final String copyTextData = await textService.getCopyText() ?? "";
+        print("copyTextData $copyTextData, qrData $qrData");
+        await Future.microtask(() => setState(() => qrData = copyTextData));
+        print("copyTextData $copyTextData, qrData $qrData");
+      },
       child: const Text(
         "Use Copied\nText",
         textAlign: TextAlign.center,

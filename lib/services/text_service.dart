@@ -3,11 +3,12 @@ import 'package:flutter/services.dart';
 class TextService {
   Future<String?> getCopyText() async {
     String? result;
-    bool hasCopyText = await Clipboard.hasStrings();
-    if (hasCopyText) {
-      ClipboardData? copyText = await Clipboard.getData('text/plain');
-      result = copyText!.text!.trim();
-    }
+    // bool hasCopyText = await Clipboard.hasStrings();
+    // print("aynen  hasCopyText $hasCopyText");
+    // if (hasCopyText) {
+    ClipboardData? copyText = await Clipboard.getData('text/plain');
+    result = copyText?.text?.trim();
+    // }
     return result;
   }
 

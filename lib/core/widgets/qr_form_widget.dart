@@ -41,13 +41,12 @@ class QrFormField extends StatelessWidget {
           child: GradientElevatedButton(
             onPressed: () => Future.microtask(
                 () => setState(() => qrData = qrTextEditingController.text)),
-            child: const FittedBox(
-                child: Text(
+            child: const Text(
               "Generate\nQr",
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 12, fontWeight: FontWeight.w300),
               maxLines: QrFormFieldStyle.buttonMaxLines,
-            )),
+            ),
           ),
         ),
       ]),

@@ -31,16 +31,19 @@ class Qr extends StatelessWidget {
     return Hero(
       tag: qrData,
       key: Key(qrData),
-      child: QrImage(
-        key: Key(qrData),
-        data: qrData,
-        version: QrVersions.auto,
-        size: qrImageSize,
-        backgroundColor: backgroundColor,
-        foregroundColor: foregroundColor,
-        constrainErrorBounds: false,
-        embeddedImageEmitsError: false,
-        errorCorrectionLevel: 1,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(10),
+        child: QrImage(
+          key: Key(qrData),
+          data: qrData,
+          version: QrVersions.auto,
+          size: qrImageSize,
+          backgroundColor: backgroundColor,
+          foregroundColor: foregroundColor,
+          constrainErrorBounds: false,
+          embeddedImageEmitsError: false,
+          errorCorrectionLevel: 1,
+        ),
       ),
     );
   }

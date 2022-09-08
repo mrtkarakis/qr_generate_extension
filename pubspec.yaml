@@ -63,6 +63,7 @@ flutter:
 
   assets:
     - assets/icons/
+    - assets/icons/right_arrow.png
 
 
   # The following line ensures that the Material Icons font is

@@ -7,15 +7,22 @@ class GradientElevatedButton extends StatelessWidget {
     this.onPressed,
     this.child,
     this.radius = 12,
+    this.horizontalPadding = 10,
+    this.height = 50,
+    this.width,
   }) : super(key: key);
   final Function()? onPressed;
   final Widget? child;
+  final double height;
+  final double? width;
   final double radius;
+  final double horizontalPadding;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 40,
+      height: height,
+      width: width,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(radius),
           gradient: LinearGradient(colors: [
@@ -28,7 +35,7 @@ class GradientElevatedButton extends StatelessWidget {
           primary: Colors.transparent,
           shadowColor: Colors.transparent,
           elevation: 0,
-          padding: const EdgeInsets.symmetric(horizontal: 10),
+          padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(radius),
           ),
