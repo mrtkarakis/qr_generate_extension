@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
-
-String qrData = "";
-Color backgroundColor = Colors.black;
-Color foregroundColor = Colors.white;
-TextEditingController qrTextEditingController = TextEditingController();
+import 'package:qr_generate_extension/global.dart';
 
 class Qr extends StatelessWidget {
   const Qr({
@@ -29,17 +25,17 @@ class Qr extends StatelessWidget {
     // const bool embeddedImageEmitsError = false;
     // const int errorCorrectionLevel = 1;
     return Hero(
-      tag: qrData,
-      key: Key(qrData),
+      tag: qrService.qrData,
+      key: Key(qrService.qrData),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
         child: QrImage(
-          key: Key(qrData),
-          data: qrData,
+          key: Key(qrService.qrData),
+          data: qrService.qrData,
           version: QrVersions.auto,
           size: qrImageSize,
-          backgroundColor: backgroundColor,
-          foregroundColor: foregroundColor,
+          backgroundColor: qrService.backgroundColor,
+          foregroundColor: qrService.foregroundColor,
           constrainErrorBounds: false,
           embeddedImageEmitsError: false,
           errorCorrectionLevel: 1,

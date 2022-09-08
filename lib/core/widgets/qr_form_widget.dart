@@ -27,11 +27,11 @@ class QrFormField extends StatelessWidget {
             cursorWidth: QrFormFieldStyle.cursorWidth,
             cursorRadius: QrFormFieldStyle.cursorRadius,
             cursorColor: QrFormFieldStyle.cursorColor,
-            controller: qrTextEditingController,
+            controller: qrService.qrTextEditingController,
             maxLines: QrFormFieldStyle.formFieldMaxLines,
             minLines: QrFormFieldStyle.formFieldMinLines,
             onChanged: (data) {
-              Future.microtask(() => setState(() => qrData = data));
+              Future.microtask(() => setState(() => qrService.qrData = data));
             },
             // decoration: QrFormFieldStyle.formDecoration,
           ),
@@ -39,8 +39,8 @@ class QrFormField extends StatelessWidget {
         Padding(
           padding: QrFormFieldStyle.buttonPadding,
           child: GradientElevatedButton(
-            onPressed: () => Future.microtask(
-                () => setState(() => qrData = qrTextEditingController.text)),
+            onPressed: () => Future.microtask(() => setState(() =>
+                qrService.qrData = qrService.qrTextEditingController.text)),
             child: const Text(
               "Generate\nQr",
               textAlign: TextAlign.center,
