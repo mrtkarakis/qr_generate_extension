@@ -1,6 +1,6 @@
 {
-    "name": "QR Code Extension",
-    "description": "QR Code Extension",
+    "name": "QR Generate Extension",
+    "description": "QR Generate Extension",
     "version": "1.0.0",
     "content_security_policy": {
         "extension_pages": "script-src 'self' ; object-src 'self'"
